@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop-Carrinho</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div id="cart-container">
+        
+    </div>
+    
+    <script>
+        window.onload = function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.querySelector('#cart-container');
+
+        cart.forEach(product => {
+            const item = document.createElement('div');
+        item.classList.add('cart-item');
+        item.innerHTML = `
+            <span class="item-name">${product.name}</span>
+            <span class="item-price">${product.price}</span>
+        `;
+        cartContainer.appendChild(item);
+        });
+        }
+    </script>
+
+    <script>
+
+        window.onload = function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.querySelector('#cart-container');
+            let totalPrice = 0;
+
+        cart.forEach((product, index) => {
+             const item = document.createElement('div');
+        item.classList.add('cart-item');
+        item.innerHTML = `
+            <span class="item-name">${product.name}</span>
+            <span class="item-price">${product.price}</span>
+            <button class="remove-item" data-index="${index}">Remover</button>
+        `;
+
+        cartContainer.appendChild(item);
+
+      
+        totalPrice += parseFloat(product.price.replace('R$', '').trim());
+        });
+
+    
+        const totalDisplay = document.createElement('div');
+            totalDisplay.classList.add('cart-total');
+            totalDisplay.innerHTML = `Total: R$ ${totalPrice.toFixed(2)}`;
+            cartContainer.appendChild(totalDisplay);
+
+   
+        document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', function() {
+            const indexToRemove = this.getAttribute('data-index');
+        cart.splice(indexToRemove, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.reload(); // Recarrega a página para atualizar o carrinho
+        });
+        });
+        }
+    </script>
+
+    <div class="clearfix"></div>
+    
+      
+        
+    </div>
+
+    
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>
+

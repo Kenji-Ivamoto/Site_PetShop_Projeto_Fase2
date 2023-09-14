@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div id="principal">
+        <ul id="produtos">
+            <li>
+                <a href="PaginaRacao1.html"><img src="Racao1.jpg" height="350px" alt="descrição da imagem"></a> 
+                <p>Ração Seca Golden Carne</p>
+                <p>1kg Cães Adultos</p>
+                <p>R$ 54,90</p>
+            </li>
+            <li>
+                <a href="PaginaRacao2.html"><img src="Racao2.jpg" height="350px" alt="descrição da imagem"></a>
+                <p>Ração Seca True</p>
+                <p>10kg Cães Adultos</p>
+                <p>R$ 256,41</p>
+            </li>
+            <li>
+                <a href="PaginaRacao3.html"><img src="Racao3.jpg" height="350px" alt="descrição da imagem"></a>
+                <p>Ração Seca ProHealth</p>
+                <p>1kg Cães Adultos</p>
+                <p>R$ 55,90<p></li>
+            <li>
+                <a href="PaginaRacao4.html"><img src="Racao4.jpg" height="350px" alt="descrição da imagem"></a>
+                <p>Ração Úmida Pedigree</p>
+                <p>280g Cães Adultos</p>
+                <p>R$ 11,09<p></li>
+            <li>
+                <a href="PaginaRacao5.html"><img src="Racao5.jpg" height="350px" alt="descrição da imagem"></a>
+                <p>Ração Úmida True</p>
+                <p>15kg Cães Adultos</p>
+                <p>R$ 17,91</p></li>
+            <li>
+                <a href="PaginaRacao6.html"><img src="Racao6.jpg" height="350px" alt="descrição da imagem"></a> 
+                <p>Ração Úmida Golden Gourmet</p>
+                <p>85g Cães Adultos</p>
+                <p>R$ 3,90</p></li>
+        </ul>     
+    </div>
+
+    <div id = "lateral">
+        <img src="F8.jpg" alt="Descrição da imagem 1">
+        <img src="F9.jpg" alt="Descrição da imagem 2" style="display: none;">
+        <img src="F10.jpg" alt="Descrição da imagem 3" style="display: none;">
+        <img src="F11.jpg" alt="Descrição da imagem 4" style="display: none;">
+    </div>
+    
+    <div class="clearfix"></div>
+    
+      
+        
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('#lateral img');
+        const totalImages = images.length;
+
+        // Mostra a primeira imagem
+        images[currentImageIndex].style.display = 'block';
+
+        // Função para alternar as imagens
+        function switchImage() {
+        // Oculta a imagem atual
+        images[currentImageIndex].style.display = 'none';
+    
+        // Move para a próxima imagem
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+    
+        // Mostra a próxima imagem
+        images[currentImageIndex].style.display = 'block';
+        }
+
+        // Alterna a imagem a cada 3 segundos 
+        setInterval(switchImage, 3000);
+    </script>
+
+
+
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>
+

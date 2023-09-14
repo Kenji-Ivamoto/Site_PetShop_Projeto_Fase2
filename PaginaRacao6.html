@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop-Racao2</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div class="container" data-id="1"></div>
+        <div class="product-info">
+            <img src="racao6.jpg" alt="Ração Úmida Golden Gourmet Cães Adultos Porte Pequeno Carne 85 g" class="product-image">
+            <div class="product-details">
+                <h1 class="product-name">Ração Úmida Golden Gourmet Cães Adultos Porte Pequeno Carne 85 g</h1>
+                <span class="product-price">R$ 3,90</span>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        <p class="product-description">
+            A Ração Úmida Golden Gourmet Cães Adultos Porte Pequeno Carne é um alimento completo e enriquecido com vitaminas e minerais para suprir as necessidades dos cães de pequeno porte.
+            Desenvolvido com ingredientes 100% naturais o Sachê Golden Gourmet para Cães possui um sabor saudável pois não contém corantes e aromatizantes artificiais.
+            
+          
+           
+        </p>
+    </div>
+
+<script>
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+    const productContainer = this.parentElement;
+    const productID = productContainer.getAttribute('data-id');
+    const productName = productContainer.querySelector('.product-name').innerText;
+    const productPrice = productContainer.querySelector('.product-price').innerText;
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+     cart.push({
+        id: productID,
+        name: productName,
+        price: productPrice
+        });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Produto adicionado ao carrinho!');
+     });
+</script>
+
+</body>
+    <div class="clearfix"></div>
+         
+        
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>

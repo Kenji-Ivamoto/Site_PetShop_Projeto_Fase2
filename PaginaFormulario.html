@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div id="formularioCadastro">
+        <h2>Cadastro de Clientes</h2>
+        <form action="URL_PARA_ONDE_ENVIAR_O_FORMULARIO" method="POST">
+    
+            <!-- Dados do Cliente -->
+            <fieldset>
+                <legend>Dados do Cliente:</legend>
+    
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+    
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </fieldset>
+    
+            <!-- Dados do Pet -->
+            <fieldset id="pets">
+                <legend>Dados do Pet:</legend>
+    
+                <div class="pet">
+                    <label for="nomePet1">Nome do Pet:</label>
+                    <input type="text" id="nomePet1" name="nomePet1" required>
+    
+                    <label for="raca1">Raça:</label>
+                    <input type="text" id="raca1" name="raca1" required>
+    
+                    <label for="tamanho1">Tamanho:</label>
+                    <select id="tamanho1" name="tamanho1" required>
+                        <option value="pequeno">Pequeno (até 8kg)</option>
+                        <option value="medio">Médio (8kg a 15kg)</option>
+                        <option value="grande">Grande (acima de 15kg)</option>
+                    </select>
+    
+                    <label for="temperamento1">Temperamento:</label>
+                    <select id="temperamento1" name="temperamento1" required>
+                        <option value="tranquilo">Tranquilo</option>
+                        <option value="reativo">Reativo</option>
+                        <option value="agressivo">Agressivo</option>
+                        <option value="medroso">Medroso</option>
+                    </select>
+    
+                    <button type="button" class="removerPet">Remover Pet</button>
+                </div>
+            </fieldset>
+    
+            <button type="button" id="adicionarPet">Adicionar Pet</button>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+    
+    <script>
+        let petCount = 1;
+    
+        document.getElementById('adicionarPet').addEventListener('click', function() {
+            petCount++;
+    
+            const petContainer = document.createElement('div');
+            petContainer.className = 'pet';
+    
+            const nomePetLabel = document.createElement('label');
+            nomePetLabel.htmlFor = 'nomePet' + petCount;
+            nomePetLabel.textContent = 'Nome do Pet:';
+            petContainer.appendChild(nomePetLabel);
+    
+            const nomePetInput = document.createElement('input');
+            nomePetInput.type = 'text';
+            nomePetInput.id = 'nomePet' + petCount;
+            nomePetInput.name = 'nomePet' + petCount;
+            nomePetInput.required = true;
+            petContainer.appendChild(nomePetInput);
+    
+            const racaLabel = document.createElement('label');
+            racaLabel.htmlFor = 'raca' + petCount;
+            racaLabel.textContent = 'Raça:';
+            petContainer.appendChild(racaLabel);
+    
+            const racaInput = document.createElement('input');
+            racaInput.type = 'text';
+            racaInput.id = 'raca' + petCount;
+            racaInput.name = 'raca' + petCount;
+            racaInput.required = true;
+            petContainer.appendChild(racaInput);
+    
+            const tamanhoLabel = document.createElement('label');
+            tamanhoLabel.htmlFor = 'tamanho' + petCount;
+            tamanhoLabel.textContent = 'Tamanho:';
+            petContainer.appendChild(tamanhoLabel);
+    
+            const tamanhoSelect = document.createElement('select');
+            tamanhoSelect.id = 'tamanho' + petCount;
+            tamanhoSelect.name = 'tamanho' + petCount;
+            tamanhoSelect.required = true;
+            petContainer.appendChild(tamanhoSelect);
+    
+            const opcoesTamanho = ['Pequeno (até 8kg)', 'Médio (8kg a 15kg)', 'Grande (acima de 15kg)'];
+            opcoesTamanho.forEach((opcao, index) => {
+                const option = document.createElement('option');
+                option.value = ['pequeno', 'medio', 'grande'][index];
+                option.textContent = opcao;
+                tamanhoSelect.appendChild(option);
+            });
+    
+            const temperamentoLabel = document.createElement('label');
+            temperamentoLabel.htmlFor = 'temperamento' + petCount;
+            temperamentoLabel.textContent = 'Temperamento:';
+            petContainer.appendChild(temperamentoLabel);
+    
+            const temperamentoSelect = document.createElement('select');
+            temperamentoSelect.id = 'temperamento' + petCount;
+            temperamentoSelect.name = 'temperamento' + petCount;
+            temperamentoSelect.required = true;
+            petContainer.appendChild(temperamentoSelect);
+    
+            const opcoesTemperamento = ['Tranquilo', 'Reativo', 'Agressivo', 'Medroso'];
+            opcoesTemperamento.forEach(opcao => {
+                const option = document.createElement('option');
+                option.value = opcao.toLowerCase();
+                option.textContent = opcao;
+                temperamentoSelect.appendChild(option);
+            });
+    
+            const removerButton = document.createElement('button');
+            removerButton.type = 'button';
+            removerButton.textContent = 'Remover Pet';
+            removerButton.className = 'removerPet';
+            removerButton.onclick = function() {
+                petContainer.remove();
+            };
+            petContainer.appendChild(removerButton);
+    
+            document.getElementById('pets').appendChild(petContainer);
+        });
+    
+        document.querySelectorAll('.removerPet').forEach(btn => {
+            btn.addEventListener('click', function() {
+                btn.parentElement.remove();
+            });
+        });
+    </script>
+
+    <div id = "lateral">
+        <img src="F8.jpg">
+        <img src="F9.jpg" style="display: none;">
+        <img src="F10.jpg" style="display: none;">
+        <img src="F11.jpg" style="display: none;">
+    </div>
+    
+    <div class="clearfix"></div>
+    
+      
+        
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('#lateral img');
+        const totalImages = images.length;
+
+        // Mostra a primeira imagem
+        images[currentImageIndex].style.display = 'block';
+
+        // Função para alternar as imagens
+        function switchImage() {
+        // Oculta a imagem atual
+        images[currentImageIndex].style.display = 'none';
+    
+        // Move para a próxima imagem
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+    
+        // Mostra a próxima imagem
+        images[currentImageIndex].style.display = 'block';
+        }
+
+        // Alterna a imagem a cada 3 segundos 
+        setInterval(switchImage, 3000);
+    </script>
+
+
+
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>
+

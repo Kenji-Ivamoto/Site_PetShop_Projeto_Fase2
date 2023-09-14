@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop-Racao1</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div class="container" data-id="1"></div>
+        <div class="product-info">
+            <img src="racao1.jpg" alt="Golden Formula Cães Adultos Carne & Arroz" class="product-image">
+            <div class="product-details">
+                <h1 class="product-name">Golden Formula Cães Adultos Carne & Arroz 1kg</h1>
+                <span class="product-price">R$ 54,90</span>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+        <p class="product-description">
+            Golden Formula Adultos Carne & Arroz é um alimento Premium Especial desenvolvido para cães adultos exigentes.
+            Os cães são essencialmente carnívoros e digerem muito melhor alimentos de origem animal.
+            Dessa forma, Golden Formula Adultos Carne & Arroz utiliza proteína de carne bovina e não sabores artificiais e visa, acima de tudo, proporcionar aos cães o nível ideal de todos os nutrientes que eles necessitam para uma vida longa e saudável.
+            - Pelagem bonita e pele saudável
+            Equilíbrio entre ômegas 3 e 6.
+            - Sabor incomparável
+            Formulado com proteínas de altíssima qualidade.
+            - Saúde intestinal
+            Fezes firmes e fáceis de limpar.
+            
+        </p>
+    </div>
+
+<script>
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+    const productContainer = this.parentElement;
+    const productID = productContainer.getAttribute('data-id');
+    const productName = productContainer.querySelector('.product-name').innerText;
+    const productPrice = productContainer.querySelector('.product-price').innerText;
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+     cart.push({
+        id: productID,
+        name: productName,
+        price: productPrice
+        });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Produto adicionado ao carrinho!');
+     });
+</script>
+
+</body>
+    <div class="clearfix"></div>
+         
+        
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>

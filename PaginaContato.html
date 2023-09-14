@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div id="textoQS">
+        <p>Contatos</p>
+        <p>Será um prazer atender o seu contato!</p>
+        <p>Whatsapp: (11)99999-2222</p>
+        <p>Telefone Comercial: (11)2222-3333 (atendimento de segunda a sexta, das 8h às 18h)</p>
+        <p>E-Mail: lanina_pet@gmail.com</p>
+    </div>
+    
+    <div id = "lateral">
+        <img src="F8.jpg" alt="Descrição da imagem 1">
+        <img src="F9.jpg" alt="Descrição da imagem 2" style="display: none;">
+        <img src="F10.jpg" alt="Descrição da imagem 3" style="display: none;">
+        <img src="F11.jpg" alt="Descrição da imagem 4" style="display: none;">
+    </div>
+    
+    <div class="clearfix"></div>
+    
+      
+        
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('#lateral img');
+        const totalImages = images.length;
+
+        // Mostra a primeira imagem
+        images[currentImageIndex].style.display = 'block';
+
+        // Função para alternar as imagens
+        function switchImage() {
+        // Oculta a imagem atual
+        images[currentImageIndex].style.display = 'none';
+    
+        // Move para a próxima imagem
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+    
+        // Mostra a próxima imagem
+        images[currentImageIndex].style.display = 'block';
+        }
+
+        // Alterna a imagem a cada 3 segundos 
+        setInterval(switchImage, 3000);
+    </script>
+
+
+
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>
+

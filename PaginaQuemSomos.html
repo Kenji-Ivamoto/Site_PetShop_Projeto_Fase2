@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lanina PetShop</title>
+    
+</head>
+<body>
+    <div id="barraPrinc">
+        <ul id="menuPrinc">
+            <li><a href="PaginaHome.html">Home</a></li>    
+            <li><a href="PaginaQuemSomos.html">Sobre</a></li>
+            <li><a href="PaginaContato.html">Contato</a></li>
+            <li><a href="PaginaFormulario.html">Cadastro</a></li>
+            <li><a href="paginaEntrar.html">Entrar</a></li>
+        </ul>
+   </div>
+
+   <div id="cabecalho">
+        <img src="Logo1.jpg" width="700px";>
+        <img src="F7.png" width="460px" height="250">
+      
+      
+   </div>
+
+   <div id="barraBusca">
+        <ul id="servicos">
+            <li><a href="PaginaHome.html">Produtos</a></li>
+            <li><a href="PaginaServicos.html">Serviços</a></li>
+            <li><a href="PaginaCarrinho.html">Carrinho</a></li>
+        </ul>
+   </div>
+
+    <div class="centro">
+        <div id="imagemLateral">
+        <img src="F2.png" width=700px>
+    </div>
+
+    <div id="textoQS">
+        <p>Quem Somos</p>
+        <p>Bem-vindo à Lanina PetShop, onde a paixão pelos animais corre em nosso DNA. Somos uma loja familiar, nascida do amor incondicional pelos pets e do desejo de cuidar de cada um como se fossem nossos.</p>
+        <p>Nossa história começou com o sonho simples de criar um espaço onde os animais seriam tratados com todo o carinho e respeito que merecem. Com o tempo, esse sonho se transformou em realidade e hoje, nos orgulhamos de ser referência em qualidade e atendimento na região.</p>
+        <p>Para nós, cuidar de animais não é apenas um negócio, é uma vocação. Acreditamos que cada pet tem suas necessidades individuais e, por isso, merece atenção personalizada. Em nossa loja, você encontrará não apenas produtos de alta qualidade, mas também uma equipe dedicada e sempre pronta para ajudar. Cada membro de nossa equipe é treinado para entender e atender às necessidades específicas de seu pet, garantindo que ele receba o melhor tratamento possível.</p>
+        <p>Além da qualidade dos produtos que oferecemos, o bem-estar animal está no coração de tudo o que fazemos. Trabalhamos incansavelmente para garantir que cada produto em nossas prateleiras seja seguro, saudável e benéfico para os pets.</p>
+        <p>Ao escolher a Lanina PetShop, você está escolhendo uma empresa que coloca os animais em primeiro lugar. Convidamos você a explorar nossa variedade de produtos e serviços, e a sentir a paixão e dedicação que colocamos em cada detalhe.</p>
+        <p>Venha fazer parte de nossa família e descubra por que somos a escolha preferida dos amantes de animais em nossa região!</p>
+    </div>
+    
+    <div id = "lateral">
+        <img src="F8.jpg" alt="Descrição da imagem 1">
+        <img src="F9.jpg" alt="Descrição da imagem 2" style="display: none;">
+        <img src="F10.jpg" alt="Descrição da imagem 3" style="display: none;">
+        <img src="F11.jpg" alt="Descrição da imagem 4" style="display: none;">
+    </div>
+    
+    <div class="clearfix"></div>
+    
+      
+        
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('#lateral img');
+        const totalImages = images.length;
+
+        // Mostra a primeira imagem
+        images[currentImageIndex].style.display = 'block';
+
+        // Função para alternar as imagens
+        function switchImage() {
+        // Oculta a imagem atual
+        images[currentImageIndex].style.display = 'none';
+    
+        // Move para a próxima imagem
+        currentImageIndex = (currentImageIndex + 1) % totalImages;
+    
+        // Mostra a próxima imagem
+        images[currentImageIndex].style.display = 'block';
+        }
+
+        // Alterna a imagem a cada 3 segundos 
+        setInterval(switchImage, 3000);
+    </script>
+
+
+
+</body>
+<div id = "rodape">
+    <p>PetShop Lanina Beagles S/A - Rua dos Cachorros, 4393, São Paulo, SP, Brasil</p>
+    <p>Copyright 2023 - Todos os direitos reservados</p>
+    <p>Autor do site: Rafael Kenji Ivamoto</p>
+   </div>
+</div>
+
+</html>
+
