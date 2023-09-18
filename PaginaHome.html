@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Lanina PetShop</title>
-    
+ 
+    <!--Criação das div para a colocação das divições do site (menus de navegação, imagens laterais, quadro principal, etc) -->
+
 </head>
+
 <body>
+    <!-- Divisão da barra mais superior, com o menu de navegação -->
     <div id="barraPrinc">
         <ul id="menuPrinc">
             <li><a href="PaginaHome.html">Home</a></li>    
@@ -18,13 +22,14 @@
         </ul>
    </div>
 
+   <!-- Divisão para a colocação do logo e de uma imagem para tornar o site mais atraente  -->
    <div id="cabecalho">
         <img src="Logo1.jpg" width="700px";>
         <img src="F7.png" width="460px" height="250">
       
       
    </div>
-
+    <!-- Divisão para o menu de compra e serviços -->
    <div id="barraBusca">
         <ul id="servicos">
             <li><a href="PaginaHome.html">Produtos</a></li>
@@ -33,6 +38,8 @@
         </ul>
    </div>
 
+    <!-- Parte central do site, que é uma classe com varias divisões: Imagem lateral na esquerda, 
+        o conteúdo princial no centro e as imagens que se alternam na direita -->
     <div class="centro">
         <div id="imagemLateral">
         <img src="F2.png" width=700px>
@@ -89,11 +96,12 @@
     </div>
 
     <script>
+        //Colocação de um Javascript para fazer a alteração das imagens laterais do site.
         let currentImageIndex = 0;
         const images = document.querySelectorAll('#lateral img');
         const totalImages = images.length;
 
-        // Mostra a primeira imagem
+        //Mostra a primeira imagem
         images[currentImageIndex].style.display = 'block';
 
         // Função para alternar as imagens
@@ -112,7 +120,7 @@
         setInterval(switchImage, 3000);
     </script>
 
-
+<!-- Divisão para o Rodapé -->
 
 </body>
 <div id = "rodape">
